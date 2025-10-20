@@ -15,7 +15,7 @@ Sara Maragon, rm:563807.
 🧠 Descrição do Projeto
 
 Este projeto apresenta uma Prova de Conceito (PoC) de um sistema IoT utilizando Arduino UNO, com um sensor DHT11 e dois botões físicos.
-Os dados coletados (temperatura e umidade) são enviados a um servidor web, que os armazena e exibe em um site interativo.
+Os dados coletados (temperatura e umidade, tempo de posse de bola e distancia percorrida) são enviados a um servidor web, que os armazena e exibe em um site interativo.
 
 Os botões permitem simular interações do usuário, como seleção de modos de operação ou envio manual de dados.
 
