@@ -1,11 +1,11 @@
 🌐 Projeto IoT – Monitoramento com Arduino UNO
 👥 Integrantes
 
-Bernardo Moreira, rm:
-Bruna Sadi, rm:
-Francisco Nogueira:
-Rhariel, rm:
-Sara Maragon, rm:
+Bernardo Moreira, rm: ;
+Bruna Sadi, rm: ;
+Francisco Nogueira: ;
+Rhariel, rm: ;
+Sara Maragon, rm: .
 
 🧠 Descrição do Projeto
 
