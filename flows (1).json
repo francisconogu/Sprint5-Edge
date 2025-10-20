@@ -1,0 +1,445 @@
+[
+    {
+        "id": "d625d4c3c9ccb6df",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8cca74166a3a13c8",
+        "type": "serial in",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "serial": "02ad2366bd784520",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "58ad18c96e3c0565"
+            ]
+        ]
+    },
+    {
+        "id": "58ad18c96e3c0565",
+        "type": "json",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 310,
+        "y": 100,
+        "wires": [
+            [
+                "d5afa794f0926bbb",
+                "7d857ffb3b415cf6",
+                "5e919e561155810e",
+                "25b3a9726c3b0985",
+                "6429857ec872f228",
+                "9df4b9ad32856e53"
+            ]
+        ]
+    },
+    {
+        "id": "d5afa794f0926bbb",
+        "type": "change",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperatura",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 60,
+        "wires": [
+            [
+                "df04bb5c9b8a05bd"
+            ]
+        ]
+    },
+    {
+        "id": "7d857ffb3b415cf6",
+        "type": "change",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.umidade",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "0b8fa1bd6805534f"
+            ]
+        ]
+    },
+    {
+        "id": "5e919e561155810e",
+        "type": "change",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.posse_jogador1",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "26580e71d4e74d0b"
+            ]
+        ]
+    },
+    {
+        "id": "25b3a9726c3b0985",
+        "type": "change",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.posse_jogador2",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 220,
+        "wires": [
+            [
+                "f70409b968c57103"
+            ]
+        ]
+    },
+    {
+        "id": "df04bb5c9b8a05bd",
+        "type": "ui_gauge",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "group": "2166f7cab7e0e68a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 650,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "0b8fa1bd6805534f",
+        "type": "ui_gauge",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "group": "36f4f20beb6e5ace",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Umidade",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 640,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "6429857ec872f228",
+        "type": "change",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.distancia_percorrida",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 140,
+        "wires": [
+            [
+                "e6d38745d6735d23"
+            ]
+        ]
+    },
+    {
+        "id": "9df4b9ad32856e53",
+        "type": "debug",
+        "z": "d625d4c3c9ccb6df",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 260,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e6d38745d6735d23",
+        "type": "ui_chart",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "group": "11ddc38428fd891a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Distancia percorrida pela bola",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 710,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "26580e71d4e74d0b",
+        "type": "ui_chart",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "group": "11ddc38428fd891a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Tempo de posse J1",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f70409b968c57103",
+        "type": "ui_chart",
+        "z": "d625d4c3c9ccb6df",
+        "name": "",
+        "group": "11ddc38428fd891a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Tempo de posse J2",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "02ad2366bd784520",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM5",
+        "serialbaud": "9600",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "2166f7cab7e0e68a",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "3bafa3dd93c7c575",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "36f4f20beb6e5ace",
+        "type": "ui_group",
+        "name": "Umidade",
+        "tab": "3bafa3dd93c7c575",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "11ddc38428fd891a",
+        "type": "ui_group",
+        "name": "Dados do jogo",
+        "tab": "3bafa3dd93c7c575",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3bafa3dd93c7c575",
+        "type": "ui_tab",
+        "name": "Dados ambientais",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
