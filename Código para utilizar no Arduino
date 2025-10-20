@@ -1,0 +1,76 @@
+#include <DHT.h>
+ 
+// ------------------ Sensores e botões ------------------
+#define PINO_DHT 4
+#define TIPO_DHT DHT11
+#define BOTAO_JOGADOR1 7
+#define BOTAO_JOGADOR2 8
+ 
+DHT dht(PINO_DHT, TIPO_DHT);
+ 
+// ------------------ Variáveis ------------------
+int temperatura = 0 ;
+int umidade = 0 ;
+float tempo_posse_jogador1 = 0;
+float tempo_posse_jogador2 = 0;
+float distancia_percorrida = 0;
+int jogador_com_bola = 1;
+ 
+ 
+void setup() {
+  Serial.begin(9600);
+  dht.begin();          
+ 
+  pinMode(BOTAO_JOGADOR1, INPUT_PULLUP);
+  pinMode(BOTAO_JOGADOR2, INPUT_PULLUP);
+ 
+  randomSeed(analogRead(0)); // Inicializa RNG para variação
+}
+ 
+ 
+void loop() {
+ 
+  // --------- Leitura dos botões ---------
+  int estado_jogador1 = digitalRead(BOTAO_JOGADOR1);
+  int estado_jogador2 = digitalRead(BOTAO_JOGADOR2);
+ 
+  if (estado_jogador1 == LOW && jogador_com_bola != 1) {
+    jogador_com_bola = 1;
+    Serial.println("Posse de bola mudou: Jogador 1");
+  } else if (estado_jogador2 == LOW && jogador_com_bola != 2) {
+    jogador_com_bola = 2;
+    Serial.println("Posse de bola mudou: Jogador 2");
+  }
+ 
+  // --------- Contabiliza tempo de posse ---------
+  float incremento_tempo = random(10, 51) / 100.0; // 0.10 a 0.50 s
+  if (jogador_com_bola == 1) {
+    tempo_posse_jogador1 += incremento_tempo;
+  } else {
+    tempo_posse_jogador2 += incremento_tempo;
+  }
+ 
+ 
+  float leitura_temp = dht.readTemperature();
+  float leitura_umid = dht.readHumidity();
+ 
+  temperatura = !isnan(leitura_temp) ? (int)leitura_temp : 0;
+  umidade = !isnan(leitura_umid) ? (int)leitura_umid : 0;
+ 
+  // --------- Simula distância percorrida ---------
+  float incremento_distancia = random(5, 21) / 100.0; // 0.05 a 0.20 metros
+  distancia_percorrida += incremento_distancia;
+ 
+ 
+  String dados_json = "{";
+  dados_json += "\"temperatura\":" + String(temperatura);
+  dados_json += ", \"umidade\":" + String(umidade);
+  dados_json += ", \"posse_jogador1\":" + String(tempo_posse_jogador1, 2);
+  dados_json += ", \"posse_jogador2\":" + String(tempo_posse_jogador2, 2);
+  dados_json += ", \"distancia_percorrida\":" + String(distancia_percorrida, 2);
+  dados_json += "}";
+ 
+  Serial.println(dados_json);
+ 
+  delay(1000);
+}
