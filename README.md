@@ -2,15 +2,15 @@
 
 👥 Integrantes
 
-Bernardo Moreira, rm: ;
+Bernardo Moreira, rm: 564103;
 
-Bruna Sadi, rm: ;
+Bruna Sadi, rm: 561870;
 
-Francisco Nogueira: ;
+Francisco Nogueira: 566309;
 
-Rhariel, rm: ;
+Rhariel, rm:566310;
 
-Sara Maragon, rm: .
+Sara Maragon, rm:563807.
 
 🧠 Descrição do Projeto
 
